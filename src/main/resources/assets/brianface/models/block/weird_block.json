@@ -1,0 +1,12 @@
+{
+	"parent": "block/cube",
+	"textures": {
+		"particle": "brianface:blocks/weird_block",
+		"up": "brianface:blocks/weird_block",
+		"north": "brianface:blocks/weird_block",
+		"south": "brianface:blocks/weird_block_b",
+		"east": "brianface:blocks/weird_block_b",
+		"down": "brianface:blocks/weird_block_c",
+		"west": "brianface:blocks/weird_block_c"
+	}
+}

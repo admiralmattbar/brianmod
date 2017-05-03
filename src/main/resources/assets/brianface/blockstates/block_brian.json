@@ -1,0 +1,8 @@
+{
+	"variants": {
+		"facing=north": { "model": "brianface:brian_block", "y": 270 },
+		"facing=south": { "model": "brianface:brian_block", "y": 90  },
+		"facing=east":  { "model": "brianface:brian_block"           },
+		"facing=west":  { "model": "brianface:brian_block", "y": 180 }
+	}
+}

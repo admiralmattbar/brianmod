@@ -1,0 +1,15 @@
+item.item_name.name=Item Name
+item.brian_jerky.name=Brian Jerky
+item.brian_wrench.name=Brian Wrench
+item.brian_helmet.name=Brian Helmet
+item.brian_chestplate.name=Brian Chestplate
+item.brian_leggings.name=Brian Leggings
+item.brian_boots.name=Brian Boots
+item.brian_ingot.name=Brian Ingot
+
+tile.block_name.name=Block Name
+tile.jar.name=Jar
+tile.material_ore.name=Material Ore
+tile.diff_block.name=Different Block
+tile.fun_block.name=Fun Block
+tile.brian_ore.name-Brian Ore
