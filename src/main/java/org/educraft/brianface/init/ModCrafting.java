@@ -25,7 +25,7 @@ public class ModCrafting {
 		//Shapeless recipes
 			//Shapeless recipes also start with the new ItemStack of the item being created. They then list the ingredients as a new Object[] inside brackets.
 		
-		GameRegistry.addShapelessRecipe(new ItemStack(ModItems.brian_jerky, 1), new Object[] {Items.ROTTEN_FLESH, Items.ROTTEN_FLESH});
+		GameRegistry.addShapelessRecipe(new ItemStack(ModItems.brian_jerky, 1), new Object[] {Items.ROTTEN_FLESH, ModItems.brian_face});
 		GameRegistry.addShapelessRecipe(new ItemStack(ModItems.brian_jerky), new ItemStack(ModItems.brian_face), new ItemStack(Items.BEEF));
 		
 		//Smelting recipes
@@ -33,9 +33,9 @@ public class ModCrafting {
 		
 		
 		//Smelting Blocks
-		//GameRegistry.addSmelting(ModBlocks.block_name, new ItemStack(ModItems.brian_face), 1.2F);
+		GameRegistry.addSmelting(ModBlocks.brian_ore, new ItemStack(ModItems.brian_face, 2), 1.5F);
 		
 		//Smelting Items
-		//GameRegistry.addSmelting(ModItems.brian_face, new ItemStack(ModItems.brian_jerky), 1.2F);
+		GameRegistry.addSmelting(ModItems.raw_brian, new ItemStack(ModItems.brian_jerky), 1.2F);
 	}
 }

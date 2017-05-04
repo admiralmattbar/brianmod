@@ -8,10 +8,12 @@ package org.educraft.brianface.init;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
+import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.init.SoundEvents;
 import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemArmor;
+import net.minecraft.item.ItemFood;
 /*
  * This class is where you start creating your items. Add them as variables, then initialize them, linking them to a class. You have to register them
  * and use the registerRender method to set up their textures (textures should be added to the resources folder).
@@ -35,6 +37,7 @@ public class ModItems
 	
 	//Consumable items
 	public static Item brian_jerky;
+	public static Item raw_brian;
 	
 	//Armor Items
 	public static Item brian_helmet;
@@ -55,7 +58,7 @@ public class ModItems
 	 */
 	
 	public static final ItemArmor.ArmorMaterial brian_armor = EnumHelper.addArmorMaterial("brian_armor", //Name of armor material
-																									Reference.MOD_ID + ":"+"armorBrianTex",  //Name of texture for material
+																									Reference.MOD_ID + ":"+"armor_brian_tex",  //Name of texture for material
 																									2000, //How durable the armor material is (diamond is 33), how many hits it takes before breaking
 																									new int[]{10, 10, 10, 10}, //Resisting damage for different parts 1. head, 2. chest, 3. legs, 4. boots
 																																//Number is half hearts you do not lose when hit in that spot
@@ -73,6 +76,7 @@ public class ModItems
 		//Any item will have to be initialized here like above. This explains that your item has its own class.
 		
 		brian_jerky = new ItemBrianJerky(); 
+		raw_brian = new ItemFood(2, 1.0F, true).setUnlocalizedName("raw_brian").setRegistryName("item_raw_brian").setCreativeTab(CreativeTabs.FOOD);
 		//This is a food item. Create it's class extending ItemFood instead of Item.
 		
 		brian_helmet = new ItemBrianArmor(brian_armor, 1, EntityEquipmentSlot.HEAD).setUnlocalizedName("brian_helmet").setRegistryName("item_brian_helmet"); 
@@ -96,7 +100,7 @@ public class ModItems
 		GameRegistry.register(brian_chestplate);
 		GameRegistry.register(brian_leggings);
 		GameRegistry.register(brian_boots);
-
+		GameRegistry.register(raw_brian);
 	}
 
 	public static void registerRenders()
@@ -108,6 +112,7 @@ public class ModItems
 		registerRender(brian_chestplate);
 		registerRender(brian_leggings);
 		registerRender(brian_boots);
+		registerRender(raw_brian);
 	}
 
 	private static void registerRender(Item item)

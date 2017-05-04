@@ -15,29 +15,29 @@ public class BlockBrianOre extends Block {
 	private int least_quantity;
 	private int most_quantity;
 	
-	protected BlockBrianOre(String unlocalizedName, String registryName, Material mat, Block drop, int meta, int least_quantity, int most_quantity) {
-		super(mat);
+	protected BlockBrianOre(Block drop, int meta) {
+		super(Material.ROCK);
 		setHarvestLevel("pickaxe", 1);
 		setHardness(5.0F);
 		setResistance(7.0F);
-		setUnlocalizedName(unlocalizedName);
-		setRegistryName(registryName);
+		setUnlocalizedName("brian_ore");
+		setRegistryName("block_brian_ore");
 		setCreativeTab(CreativeTabs.BUILDING_BLOCKS);
 		
 		//Setting the fields for blocks that drop things
 		this.drop = drop;
 		this.meta = meta;
-		this.least_quantity = least_quantity;
-		this.most_quantity = most_quantity;
+		this.least_quantity = 1;
+		this.most_quantity = 1;
 		
 	}
 	
-	public BlockBrianOre(String unlocalizedName, String registryName, Material mat, Block drop, int least_quantity, int most_quantity) {
-		this(unlocalizedName, registryName, mat, drop, 0, least_quantity, most_quantity);
+	public BlockBrianOre(Block drop, int least_quantity, int most_quantity) {
+		this(drop, 0);
 	}
 	
-	protected BlockBrianOre(String unlocalizedName, String registryName, Material mat, Block drop) {
-		this(unlocalizedName, registryName, mat, drop, 1, 1);
+	protected BlockBrianOre(Block drop) {
+		this(drop, 1, 1);
 	}
 	
 	public Block getBlockDropped(IBlockState blockstate, Random random, int fortune) {
