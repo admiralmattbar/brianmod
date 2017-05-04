@@ -10,7 +10,7 @@ import org.educraft.brianface.blockclasses.BlockBrianBushEmpty;
 import org.educraft.brianface.blockclasses.BlockBrianBushFull;
 import org.educraft.brianface.blockclasses.BlockDiffBlock;
 import org.educraft.brianface.blockclasses.BlockBrian;
-import org.educraft.brianface.blockclasses.ModBlockOre;
+import org.educraft.brianface.blockclasses.BlockBrianOre;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.MapColor;
 import net.minecraft.block.material.Material;
@@ -44,7 +44,7 @@ public class ModBlocks {
 		brian_bush_empty = new BlockBrianBushEmpty().setUnlocalizedName("brian_bush_empty").setRegistryName("block_brian_bush_empty");
 		brian_bush_full = new BlockBrianBushFull().setUnlocalizedName("brian_bush_full").setRegistryName("block_brian_bush_full");
 		brian_hair = new Block(Material.CLAY, MapColor.CLAY).setUnlocalizedName("brian_hair").setCreativeTab(CreativeTabs.DECORATIONS).setRegistryName("block_brian_hair");
-		brian_ore = new ModBlockOre("brian_ore", "block_brian_ore", Material.ROCK, ModBlocks.brian_ore, 1, 1, "pickaxe", 1, 5.0F, 7.0F);
+		brian_ore = new BlockBrianOre("brian_ore", "block_brian_ore", Material.ROCK, ModBlocks.brian_ore, 1, 1, "pickaxe", 1, 5.0F, 7.0F);
 		fun_block = new BlockBrian();
 		diff_block = new BlockDiffBlock(Material.ROCK).setUnlocalizedName("diff_block").setRegistryName("block_diff").setCreativeTab(CreativeTabs.BUILDING_BLOCKS);
 		weird_block = new Block(Material.ROCK).setUnlocalizedName("weird_block").setRegistryName("block_weird").setCreativeTab(CreativeTabs.DECORATIONS);
