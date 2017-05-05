@@ -14,6 +14,8 @@ import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemArmor;
 import net.minecraft.item.ItemFood;
+import net.minecraft.item.ItemHoe;
+import net.minecraft.item.ItemSpade;
 /*
  * This class is where you start creating your items. Add them as variables, then initialize them, linking them to a class. You have to register them
  * and use the registerRender method to set up their textures (textures should be added to the resources folder).
@@ -24,7 +26,10 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
 import org.educraft.brianface.Reference;
 import org.educraft.brianface.itemclasses.ItemBrian;
 import org.educraft.brianface.itemclasses.ItemBrianArmor;
+import org.educraft.brianface.itemclasses.ItemBrianAxe;
 import org.educraft.brianface.itemclasses.ItemBrianJerky;
+import org.educraft.brianface.itemclasses.ItemBrianPickaxe;
+import org.educraft.brianface.itemclasses.ItemBrianWrench;
 import org.educraft.brianface.itemclasses.ItemToolItem;
 
 public class ModItems
@@ -47,6 +52,10 @@ public class ModItems
 	
 	//Tools and Weapons
 	public static Item brian_wrench;
+	public static Item brian_axe;
+	public static Item brian_shovel;
+	public static Item brian_hoe;
+	public static Item brian_pickaxe;
 	
 	//Create your own materials for tools and armor
 	public static final Item.ToolMaterial brian_material = EnumHelper.addToolMaterial("brian_material", 3, 2000, 10.0F, 3.0F, 50);
@@ -89,6 +98,12 @@ public class ModItems
 		brian_leggings = new ItemBrianArmor(brian_armor, 2 /*notice leggings are different here*/, EntityEquipmentSlot.LEGS).setUnlocalizedName("brian_leggings").setRegistryName("item_brian_leggings"); 
 		brian_boots = new ItemBrianArmor(brian_armor, 1, EntityEquipmentSlot.FEET).setUnlocalizedName("brian_boots").setRegistryName("item_brian_boots"); 
 		
+		//Tools and Weapons
+		brian_pickaxe = new ItemBrianPickaxe().setRegistryName("item_brian_pickaxe");
+		brian_hoe = new ItemHoe(ModItems.brian_material).setRegistryName("item_brian_hoe").setUnlocalizedName("item_brian_hoe").setCreativeTab(CreativeTabs.TOOLS);
+		brian_axe = new ItemBrianAxe(ModItems.brian_material).setUnlocalizedName("brian_axe").setRegistryName("item_brian_axe").setCreativeTab(CreativeTabs.TOOLS);
+		brian_shovel = new ItemSpade(ModItems.brian_material).setUnlocalizedName("brian_shovel").setRegistryName("item_brian_shovel").setCreativeTab(CreativeTabs.TOOLS);
+		brian_wrench = new ItemBrianWrench();
 	}
 
 	public static void register()
@@ -101,6 +116,11 @@ public class ModItems
 		GameRegistry.register(brian_leggings);
 		GameRegistry.register(brian_boots);
 		GameRegistry.register(raw_brian);
+		GameRegistry.register(brian_pickaxe);
+		GameRegistry.register(brian_wrench);
+		GameRegistry.register(brian_hoe);
+		GameRegistry.register(brian_axe);
+		GameRegistry.register(brian_shovel);
 	}
 
 	public static void registerRenders()
@@ -113,6 +133,11 @@ public class ModItems
 		registerRender(brian_leggings);
 		registerRender(brian_boots);
 		registerRender(raw_brian);
+		registerRender(brian_shovel);
+		registerRender(brian_axe);
+		registerRender(brian_pickaxe);
+		registerRender(brian_hoe);
+		registerRender(brian_wrench);
 	}
 
 	private static void registerRender(Item item)

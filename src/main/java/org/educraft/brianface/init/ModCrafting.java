@@ -14,7 +14,7 @@ public class ModCrafting {
 		//Crafting recipes go here
 		
 		//Shaped recipes
-		//Use themethod shown below. The first item is a new ItemStack and that is what is created.
+		//Use the method shown below. The first item is a new ItemStack and that is what is created.
 		
 		//Creating recipes for brian armor
 		GameRegistry.addShapedRecipe(new ItemStack(ModItems.brian_chestplate), "M M", "MMM", "MMM", 'M', ModItems.brian_face);
