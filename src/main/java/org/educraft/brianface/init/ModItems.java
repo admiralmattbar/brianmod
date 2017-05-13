@@ -43,6 +43,7 @@ public class ModItems
 	//Consumable items
 	public static Item brian_jerky;
 	public static Item raw_brian;
+	public static Item brapple;
 	
 	//Armor Items
 	public static Item brian_helmet;
@@ -87,6 +88,8 @@ public class ModItems
 		brian_jerky = new ItemBrianJerky(); 
 		raw_brian = new ItemFood(2, 1.0F, true).setUnlocalizedName("raw_brian").setRegistryName("item_raw_brian").setCreativeTab(CreativeTabs.FOOD);
 		//This is a food item. Create it's class extending ItemFood instead of Item.
+
+		brapple = new ItemFood(4, 2.1F, false).setUnlocalizedName("brapple").setRegistryName("item_brapple").setCreativeTab(CreativeTabs.FOOD);
 		
 		brian_helmet = new ItemBrianArmor(brian_armor, 1, EntityEquipmentSlot.HEAD).setUnlocalizedName("brian_helmet").setRegistryName("item_brian_helmet"); 
 		//When calling the ItemBrianArmor class you put the material name and body location in the parentheses.
@@ -121,6 +124,7 @@ public class ModItems
 		GameRegistry.register(brian_hoe);
 		GameRegistry.register(brian_axe);
 		GameRegistry.register(brian_shovel);
+		GameRegistry.register(brapple);
 	}
 
 	public static void registerRenders()
@@ -138,6 +142,7 @@ public class ModItems
 		registerRender(brian_pickaxe);
 		registerRender(brian_hoe);
 		registerRender(brian_wrench);
+		registerRender(brapple);
 	}
 
 	private static void registerRender(Item item)
