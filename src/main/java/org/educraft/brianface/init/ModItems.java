@@ -44,6 +44,7 @@ public class ModItems
 	public static Item brian_jerky;
 	public static Item raw_brian;
 	public static Item brapple;
+	public static Item brian_poo;
 	
 	//Armor Items
 	public static Item brian_helmet;
@@ -87,6 +88,7 @@ public class ModItems
 		
 		brian_jerky = new ItemBrianJerky(); 
 		raw_brian = new ItemFood(2, 1.0F, true).setUnlocalizedName("raw_brian").setRegistryName("item_raw_brian").setCreativeTab(CreativeTabs.FOOD);
+		brian_poo = new Item().setUnlocalizedName("brian_poo").setRegistryName("item_brian_poo").setCreativeTab(CreativeTabs.BREWING);
 		//This is a food item. Create it's class extending ItemFood instead of Item.
 
 		brapple = new ItemFood(4, 2.1F, false).setUnlocalizedName("brapple").setRegistryName("item_brapple").setCreativeTab(CreativeTabs.FOOD);
@@ -125,6 +127,7 @@ public class ModItems
 		GameRegistry.register(brian_axe);
 		GameRegistry.register(brian_shovel);
 		GameRegistry.register(brapple);
+		GameRegistry.register(brian_poo);
 	}
 
 	public static void registerRenders()
@@ -143,6 +146,7 @@ public class ModItems
 		registerRender(brian_hoe);
 		registerRender(brian_wrench);
 		registerRender(brapple);
+		registerRender(brian_poo);
 	}
 
 	private static void registerRender(Item item)
