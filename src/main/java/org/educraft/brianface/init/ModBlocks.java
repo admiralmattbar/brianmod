@@ -34,10 +34,6 @@ public class ModBlocks {
 	public static Block weird_block;
 	public static Block brian_bush_empty;
 	public static Block brian_bush_full;
-	
-	/*public static Block brian_bush_empty;
-	public static Block brian_bush_full;*/
-	
 
 	public static void init() {
 		//Initialize items with class

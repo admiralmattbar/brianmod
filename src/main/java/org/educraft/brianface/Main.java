@@ -17,7 +17,7 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
 import org.educraft.brianface.init.ModBlocks;
 import org.educraft.brianface.init.ModCrafting;
 import org.educraft.brianface.init.ModItems;
-import org.educraft.brianface.proxy.CommonProxy;
+import org.educraft.brianface.proxy.ICommonProxy;
 import org.educraft.brianface.worldgenerator.ModWorldGen;
 
 @Mod(modid = Reference.MOD_ID, name = Reference.NAME, version = Reference.VERSION, acceptedMinecraftVersions = Reference.ACCEPTED_VERSIONS)
@@ -27,19 +27,23 @@ public class Main
 	public static Main instance;
 	
 	@SidedProxy(clientSide = Reference.CLIENT_PROXY_CLASS, serverSide = Reference.SERVER_PROXY_CLASS)
-	public static CommonProxy proxy;
+	public static ICommonProxy proxy;
 
 	@EventHandler
 	public void preInit(FMLPreInitializationEvent event) 
 	{
 		System.out.println("PreInit Test");
-		
+
 		ModItems.init();
 		ModItems.register();
 
 		ModBlocks.init();
 		ModBlocks.register();
-		
+
+
+
+		proxy.preInit(event);
+
 		//MaterialGenerator.register();
 	}
 	
@@ -47,16 +51,16 @@ public class Main
 	public void init(FMLInitializationEvent event) 
 	{
 		System.out.println("Init Test");
-		proxy.init();
-		
 		ModCrafting.register();
-		
+
 		GameRegistry.registerWorldGenerator(new ModWorldGen(), 0);
+		proxy.init(event);
 	}
 	
 	@EventHandler
 	public void postInit(FMLPostInitializationEvent event) 
 	{
+		proxy.postInit(event);
 		System.out.println("PostInit Test");
 	}
 

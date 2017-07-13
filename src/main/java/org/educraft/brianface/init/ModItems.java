@@ -24,13 +24,7 @@ import net.minecraftforge.common.util.EnumHelper;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 
 import org.educraft.brianface.Reference;
-import org.educraft.brianface.itemclasses.ItemBrian;
-import org.educraft.brianface.itemclasses.ItemBrianArmor;
-import org.educraft.brianface.itemclasses.ItemBrianAxe;
-import org.educraft.brianface.itemclasses.ItemBrianJerky;
-import org.educraft.brianface.itemclasses.ItemBrianPickaxe;
-import org.educraft.brianface.itemclasses.ItemBrianWrench;
-import org.educraft.brianface.itemclasses.ItemToolItem;
+import org.educraft.brianface.itemclasses.*;
 
 public class ModItems
 {
@@ -58,6 +52,7 @@ public class ModItems
 	public static Item brian_shovel;
 	public static Item brian_hoe;
 	public static Item brian_pickaxe;
+	public static Item brianade;
 	
 	//Create your own materials for tools and armor
 	public static final Item.ToolMaterial brian_material = EnumHelper.addToolMaterial("brian_material", 3, 2000, 10.0F, 3.0F, 50);
@@ -109,6 +104,7 @@ public class ModItems
 		brian_axe = new ItemBrianAxe(ModItems.brian_material).setUnlocalizedName("brian_axe").setRegistryName("item_brian_axe").setCreativeTab(CreativeTabs.TOOLS);
 		brian_shovel = new ItemSpade(ModItems.brian_material).setUnlocalizedName("brian_shovel").setRegistryName("item_brian_shovel").setCreativeTab(CreativeTabs.TOOLS);
 		brian_wrench = new ItemBrianWrench();
+		brianade = new ItemBrianade().setUnlocalizedName("brianade").setRegistryName("item_brianade");
 	}
 
 	public static void register()
@@ -128,6 +124,7 @@ public class ModItems
 		GameRegistry.register(brian_shovel);
 		GameRegistry.register(brapple);
 		GameRegistry.register(brian_poo);
+		GameRegistry.register(brianade);
 	}
 
 	public static void registerRenders()
@@ -147,6 +144,7 @@ public class ModItems
 		registerRender(brian_wrench);
 		registerRender(brapple);
 		registerRender(brian_poo);
+		registerRender(brianade);
 	}
 
 	private static void registerRender(Item item)
