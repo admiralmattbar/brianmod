@@ -60,10 +60,8 @@ public class EntityBrianade extends EntityThrowable
     {
         Entity entity = result.entityHit;
 
-        if (!(result.getBlockPos().getClass().equals(BlockAir.class)))
-        {
-            world.createExplosion(throwerIn, result.hitVec.xCoord, result.hitVec.yCoord, result.hitVec.zCoord, 8F, true);
-        }
+        world.createExplosion(throwerIn, result.hitVec.xCoord, result.hitVec.yCoord, result.hitVec.zCoord, 8F, true);
+
 
         if (!this.world.isRemote)
         {

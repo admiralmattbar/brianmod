@@ -1,31 +1,42 @@
 package org.educraft.brianface.renderer.entity;
 
-import net.minecraft.client.renderer.GlStateManager;
-import net.minecraft.client.renderer.RenderItem;
-import net.minecraft.client.renderer.block.model.ItemCameraTransforms;
 import net.minecraft.client.renderer.entity.Render;
 import net.minecraft.client.renderer.entity.RenderManager;
-import net.minecraft.client.renderer.entity.RenderSnowball;
-import net.minecraft.client.renderer.texture.TextureMap;
-import net.minecraft.entity.Entity;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
+import net.minecraftforge.fml.client.registry.IRenderFactory;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import org.educraft.brianface.Reference;
+import org.educraft.brianface.entityclasses.EntityBrianade;
+
+import javax.annotation.Nullable;
 
 @SideOnly(Side.CLIENT)
-public class RenderBrianade extends RenderSnowball{
+public class RenderBrianade<T extends EntityBrianade> extends Render<T> {
 
-    private static ResourceLocation BRIANADE_TEXTURE = new ResourceLocation(Reference.MOD_ID+"textures/entity/brianade/brianade.png");
+    private static ResourceLocation BRIANADE_TEXTURE = new ResourceLocation(Reference.MOD_ID+":textures/entity/brianade/brianade.png");
 
-    public RenderBrianade(RenderManager renderManagerIn, Item itemIn, RenderItem itemRendererIn) {
-        super(renderManagerIn, itemIn, itemRendererIn);
+    public static final Factory FACTORY = new Factory();
+
+    public RenderBrianade(RenderManager renderManagerIn) {
+        super(renderManagerIn);
     }
 
-    protected ResourceLocation getEntityTexture(Entity entity)
-    {
+    @Nullable
+    @Override
+    protected ResourceLocation getEntityTexture(EntityBrianade entity) {
         return BRIANADE_TEXTURE;
     }
+
+    public static class Factory implements IRenderFactory<EntityBrianade> {
+
+        @Override
+        public Render<? super EntityBrianade> createRenderFor(RenderManager manager){
+
+            return new RenderBrianade(manager);
+
+        }
+
+    }
+
 }

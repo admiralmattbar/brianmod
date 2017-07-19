@@ -104,7 +104,7 @@ public class ModItems
 		brian_axe = new ItemBrianAxe(ModItems.brian_material).setUnlocalizedName("brian_axe").setRegistryName("item_brian_axe").setCreativeTab(CreativeTabs.TOOLS);
 		brian_shovel = new ItemSpade(ModItems.brian_material).setUnlocalizedName("brian_shovel").setRegistryName("item_brian_shovel").setCreativeTab(CreativeTabs.TOOLS);
 		brian_wrench = new ItemBrianWrench();
-		brianade = new ItemBrianade().setUnlocalizedName("brianade").setRegistryName("item_brianade");
+		brianade = new ItemBrianade().setUnlocalizedName("brianade").setRegistryName("item_brianade").setCreativeTab(CreativeTabs.COMBAT);
 	}
 
 	public static void register()

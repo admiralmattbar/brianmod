@@ -12,24 +12,24 @@ import net.minecraftforge.fml.client.registry.RenderingRegistry;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
+import org.educraft.brianface.Reference;
+import org.educraft.brianface.entityclasses.EntityBrianade;
 import org.educraft.brianface.init.ModBlocks;
+import org.educraft.brianface.init.ModEntities;
 import org.educraft.brianface.init.ModItems;
+import org.educraft.brianface.renderer.entity.RenderBrianade;
 
 public class ClientProxy implements ICommonProxy {
 
 	@Override
 	public void preInit(FMLPreInitializationEvent event){
 
-		//ModEntities.initModels();
+		ModEntities.initModels();
+		RenderingRegistry.registerEntityRenderingHandler(EntityBrianade.class, new RenderBrianade(Reference.MOD_ID.brianade));
 
-		/*
-		RenderingRegistry.registerEntityRenderingHandler(EntityBrian.class, new IRenderFactory<EntityBrian>() {
-			@Override
-			public Render<? super EntityBrian> createRenderFor(RenderManager manager) {
-				return new RenderBrian(manager, new ModelBrian(), 0.5F);
-			}
-		});
-		*/
+
+
+
 
 
 	}
