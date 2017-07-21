@@ -2,6 +2,7 @@ package org.educraft.brianface.renderer.entity;
 
 import net.minecraft.client.renderer.entity.Render;
 import net.minecraft.client.renderer.entity.RenderManager;
+import net.minecraft.entity.Entity;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fml.client.registry.IRenderFactory;
 import net.minecraftforge.fml.relauncher.Side;
@@ -14,21 +15,26 @@ import javax.annotation.Nullable;
 @SideOnly(Side.CLIENT)
 public class RenderBrianade<T extends EntityBrianade> extends Render<T> {
 
-    private static ResourceLocation BRIANADE_TEXTURE = new ResourceLocation(Reference.MOD_ID+":textures/entity/brianade/brianade.png");
+    private static final ResourceLocation BRIANADE_TEXTURE = new ResourceLocation(Reference.MOD_ID,"textures/entity/brianade/brianade.png");
 
     public static final Factory FACTORY = new Factory();
 
     public RenderBrianade(RenderManager renderManagerIn) {
-        super(renderManagerIn);
+
+        super(renderManagerIn/*, new ModelBrianade(), 1.0F*/);
+
     }
 
     @Nullable
-    @Override
+    //@Override
     protected ResourceLocation getEntityTexture(EntityBrianade entity) {
+
         return BRIANADE_TEXTURE;
     }
 
     public static class Factory implements IRenderFactory<EntityBrianade> {
+
+        public static final Factory INSTANCE = new Factory();
 
         @Override
         public Render<? super EntityBrianade> createRenderFor(RenderManager manager){

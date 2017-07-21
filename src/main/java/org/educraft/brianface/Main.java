@@ -5,6 +5,7 @@
 
 package org.educraft.brianface;
 
+import net.minecraft.entity.Entity;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.Mod.Instance;
@@ -12,10 +13,13 @@ import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
+import net.minecraftforge.fml.common.registry.EntityRegistry;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 
+import org.educraft.brianface.entityclasses.EntityBrianade;
 import org.educraft.brianface.init.ModBlocks;
 import org.educraft.brianface.init.ModCrafting;
+import org.educraft.brianface.init.ModEntities;
 import org.educraft.brianface.init.ModItems;
 import org.educraft.brianface.proxy.ICommonProxy;
 import org.educraft.brianface.worldgenerator.ModWorldGen;
@@ -40,6 +44,8 @@ public class Main
 		ModBlocks.init();
 		ModBlocks.register();
 
+		ModEntities.initModels();
+
 
 
 		proxy.preInit(event);
@@ -54,6 +60,7 @@ public class Main
 		ModCrafting.register();
 
 		GameRegistry.registerWorldGenerator(new ModWorldGen(), 0);
+
 		proxy.init(event);
 	}
 	

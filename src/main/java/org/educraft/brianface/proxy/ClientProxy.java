@@ -25,12 +25,8 @@ public class ClientProxy implements ICommonProxy {
 	public void preInit(FMLPreInitializationEvent event){
 
 		ModEntities.initModels();
-		RenderingRegistry.registerEntityRenderingHandler(EntityBrianade.class, new RenderBrianade(Reference.MOD_ID.brianade));
-
-
-
-
-
+		//RenderingRegistry.registerEntityRenderingHandler(EntityBrianade.class, new RenderBrianade(Reference.MOD_ID.brianade));
+		//RenderingRegistry.registerEntityRenderingHandler(EntityBrianade.class, RenderBrianade.FACTORY);
 
 	}
 
@@ -38,6 +34,7 @@ public class ClientProxy implements ICommonProxy {
 	public void init(FMLInitializationEvent event) {
 		ModItems.registerRenders();
 		ModBlocks.registerRenders();
+		RenderingRegistry.registerEntityRenderingHandler(EntityBrianade.class, RenderBrianade.FACTORY);
 
 	}
 

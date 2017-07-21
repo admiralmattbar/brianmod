@@ -23,16 +23,19 @@ public class EntityBrianade extends EntityThrowable
 
     public EntityBrianade(World worldIn)
     {
+
         super(worldIn);
     }
 
     public EntityBrianade(World worldIn, EntityLivingBase throwerIn)
     {
+
         super(worldIn, throwerIn);
     }
 
     public EntityBrianade(World worldIn, double x, double y, double z)
     {
+
         super(worldIn, x, y, z);
     }
 
