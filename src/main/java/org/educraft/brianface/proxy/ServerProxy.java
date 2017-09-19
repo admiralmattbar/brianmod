@@ -7,11 +7,13 @@ package org.educraft.brianface.proxy;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
+import org.educraft.brianface.init.ModEntities;
 
 public class ServerProxy implements ICommonProxy {
 
     @Override
     public void preInit(FMLPreInitializationEvent event) {
+
 
     }
 

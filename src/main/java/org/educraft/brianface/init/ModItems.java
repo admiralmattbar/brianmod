@@ -33,12 +33,15 @@ public class ModItems
 	
 	//Random item that is just black square, use this for recipes.
 	public static Item brian_face;
+	public static Item copper_ingot;
+	public static Item copper_dust;
 	
 	//Consumable items
 	public static Item brian_jerky;
 	public static Item raw_brian;
 	public static Item brapple;
 	public static Item brian_poo;
+
 	
 	//Armor Items
 	public static Item brian_helmet;
@@ -53,6 +56,7 @@ public class ModItems
 	public static Item brian_hoe;
 	public static Item brian_pickaxe;
 	public static Item brianade;
+	public static Item brian_hammer;
 	
 	//Create your own materials for tools and armor
 	public static final Item.ToolMaterial brian_material = EnumHelper.addToolMaterial("brian_material", 3, 2000, 10.0F, 3.0F, 50);
@@ -77,8 +81,10 @@ public class ModItems
 	{
 		//Initialize items with class
 		brian_wrench = new ItemToolItem(ModItems.brian_material).setUnlocalizedName("brian_wrench").setRegistryName("item_brian_wrench");
-		
-		brian_face = new ItemBrian();
+
+		copper_dust = new Item().setUnlocalizedName("copper_dust").setRegistryName("copper_dust").setCreativeTab(CreativeTabs.MISC);
+		copper_ingot = new Item().setUnlocalizedName("copper_ingot").setRegistryName("copper_ingot").setCreativeTab(CreativeTabs.MISC);
+		brian_face = new ItemBrian().setRegistryName("item_brian");
 		//Any item will have to be initialized here like above. This explains that your item has its own class.
 		
 		brian_jerky = new ItemBrianJerky(); 
@@ -105,6 +111,7 @@ public class ModItems
 		brian_shovel = new ItemSpade(ModItems.brian_material).setUnlocalizedName("brian_shovel").setRegistryName("item_brian_shovel").setCreativeTab(CreativeTabs.TOOLS);
 		brian_wrench = new ItemBrianWrench();
 		brianade = new ItemBrianade().setUnlocalizedName("brianade").setRegistryName("item_brianade").setCreativeTab(CreativeTabs.COMBAT);
+		brian_hammer = new ItemBrianHammer();
 	}
 
 	public static void register()
@@ -125,6 +132,9 @@ public class ModItems
 		GameRegistry.register(brapple);
 		GameRegistry.register(brian_poo);
 		GameRegistry.register(brianade);
+		GameRegistry.register(copper_dust);
+		GameRegistry.register(copper_ingot);
+		GameRegistry.register(brian_hammer);
 	}
 
 	public static void registerRenders()
@@ -145,6 +155,9 @@ public class ModItems
 		registerRender(brapple);
 		registerRender(brian_poo);
 		registerRender(brianade);
+		registerRender(copper_dust);
+		registerRender(copper_ingot);
+		registerRender(brian_hammer);
 	}
 
 	private static void registerRender(Item item)
@@ -153,4 +166,5 @@ public class ModItems
 		//There is no need to add to this method
 		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(item, 0, new ModelResourceLocation(item.getRegistryName(), "inventory"));
 	}
+
 }

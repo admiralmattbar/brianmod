@@ -36,7 +36,7 @@ public class ItemBrianade extends Item {
 
         worldIn.playSound((EntityPlayer)null, playerIn.posX, playerIn.posY, playerIn.posZ, SoundEvents.ENTITY_SNOWBALL_THROW, SoundCategory.NEUTRAL, 0.5F, 0.4F / (itemRand.nextFloat() * 0.4F + 0.8F));
 
-        if (!worldIn.isRemote)
+        if (worldIn.isRemote)
         {
             //Change to Grenade Entity
             EntityBrianade entitybrianade = new EntityBrianade(worldIn, playerIn);

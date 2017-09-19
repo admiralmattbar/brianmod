@@ -12,7 +12,7 @@ public class ItemBrian extends Item {
 	
 	public ItemBrian() {
 		setUnlocalizedName("brian_face"); 
-		setRegistryName("item_brian");  
+		//setRegistryName("item_brian");
 		setCreativeTab(CreativeTabs.MISC); //Places item in a special Creative Tab for this mod.
 		this.setFull3D(); //Better for holding an item view. 
 	}

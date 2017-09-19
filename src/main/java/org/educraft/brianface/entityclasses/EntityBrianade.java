@@ -1,19 +1,16 @@
 package org.educraft.brianface.entityclasses;
 
-import net.minecraft.block.BlockAir;
+import net.minecraft.block.Block;
+import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
-import net.minecraft.entity.monster.EntityBlaze;
-import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.projectile.EntityThrowable;
-import net.minecraft.util.DamageSource;
 import net.minecraft.util.EnumParticleTypes;
 import net.minecraft.util.datafix.DataFixer;
-import net.minecraft.util.datafix.walkers.BlockEntityTag;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.world.World;
-import net.minecraftforge.fml.relauncher.Side;
-import net.minecraftforge.fml.relauncher.SideOnly;
+import net.minecraftforge.fml.relauncher.*;
 
 public class EntityBrianade extends EntityThrowable
 {
@@ -56,20 +53,51 @@ public class EntityBrianade extends EntityThrowable
         }
     }
 
-    /**
-     * Called when this EntityThrowable hits a block or entity.
-     */
+    @Override
+    protected float getGravityVelocity()
+    {
+        return 0.06F;
+    }
+
     protected void onImpact(RayTraceResult result)
     {
-        Entity entity = result.entityHit;
-
-        world.createExplosion(throwerIn, result.hitVec.xCoord, result.hitVec.yCoord, result.hitVec.zCoord, 8F, true);
-
 
         if (!this.world.isRemote)
         {
-            this.world.setEntityState(this, (byte)3);
-            this.setDead();
+            world.createExplosion(result.entityHit, result.hitVec.xCoord, result.hitVec.yCoord, result.hitVec.zCoord, 10f, true);
         }
+
+        this.setDead();
+
+
+        /*
+        Entity target = result.entityHit;
+
+
+
+        if (target != null) {
+            if (target.getEntityId() == this.throwerIn.getEntityId()) {
+                return;
+            }
+
+            if(!world.isRemote) {
+                world.createExplosion(target, result.hitVec.xCoord, result.hitVec.yCoord, result.hitVec.zCoord, 10f, true);
+            }
+        }
+
+        if (result.getBlockPos() != null) {
+            //BlockPos pos = result.getBlockPos();
+            //IBlockState state = world.getBlockState(pos);
+            //Block blockIn = state.getBlock();
+
+            if(!world.isRemote) {
+                world.createExplosion(target, result.hitVec.xCoord, result.hitVec.yCoord, result.hitVec.zCoord, 10f, true);
+            }
+
+        }
+
+        this.setDead();
+        */
     }
+
 }

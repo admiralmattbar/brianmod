@@ -44,10 +44,6 @@ public class Main
 		ModBlocks.init();
 		ModBlocks.register();
 
-		ModEntities.initModels();
-
-
-
 		proxy.preInit(event);
 
 		//MaterialGenerator.register();
@@ -58,6 +54,8 @@ public class Main
 	{
 		System.out.println("Init Test");
 		ModCrafting.register();
+
+		ModEntities.init();
 
 		GameRegistry.registerWorldGenerator(new ModWorldGen(), 0);
 

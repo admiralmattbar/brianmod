@@ -9,21 +9,29 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import org.educraft.brianface.Reference;
 import org.educraft.brianface.entityclasses.EntityBrianade;
+import org.educraft.brianface.modelclasses.ModelBrianade;
 
 import javax.annotation.Nullable;
 
 @SideOnly(Side.CLIENT)
-public class RenderBrianade<T extends EntityBrianade> extends Render<T> {
+public class RenderBrianade extends Render<EntityBrianade> {
 
     private static final ResourceLocation BRIANADE_TEXTURE = new ResourceLocation(Reference.MOD_ID,"textures/entity/brianade/brianade.png");
 
     public static final Factory FACTORY = new Factory();
 
+    protected RenderBrianade(RenderManager renderManager) {
+        super(renderManager);
+    }
+
+/*
     public RenderBrianade(RenderManager renderManagerIn) {
 
-        super(renderManagerIn/*, new ModelBrianade(), 1.0F*/);
+        super(renderManagerIn, new ModelBrianade(), 1.0F);
 
     }
+    */
+
 
     @Nullable
     //@Override
